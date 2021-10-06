@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://UI/menu.png" type="Texture" id=1]
+[ext_resource path="res://UI/start_button.png" type="Texture" id=2]
+[ext_resource path="res://Script/MainMenu.gd" type="Script" id=3]
+[ext_resource path="res://Sounds/Twin-Musicom-64-Sundays.mp3" type="AudioStream" id=4]
+[ext_resource path="res://UI/TUTORIAL.png" type="Texture" id=5]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 617.244 ]
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1.0
+margin_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.589
+anchor_right = 0.5
+anchor_bottom = 0.589
+margin_left = -55.5
+margin_top = -48.08
+margin_right = 55.5
+margin_bottom = 47.92
+icon = ExtResource( 2 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -231.532
+margin_top = -210.137
+margin_right = -85.5328
+margin_bottom = -61.1365
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
